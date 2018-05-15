@@ -28,7 +28,7 @@
 		<div class="bottom-action">
             <button class="btn" @click="toggleCart">添加商品</button>
 	    </div>
-		<div :class="['popup', {'active' : shouldShowCart}]">
+		<div class="popup" v-show="shouldShowCart">
             <div class="backdrop" @click="toggleCart"></div>
             <form class="popup-content">
                 <h3>添加商品</h3>
