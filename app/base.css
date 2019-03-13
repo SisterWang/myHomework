@@ -65,3 +65,8 @@ input[type="tel"]:focus {
 a.btn {
   line-height: 48px;
 }
+
+#app {
+  max-width: 400px;
+  margin: 0 auto;
+}
