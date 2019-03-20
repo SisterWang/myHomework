@@ -14,27 +14,27 @@
   </div>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      code: '',
-      shouldShowCart: false,
-    }
-  },
-  methods: {
-    toggleCart() {
-      this.shouldShowCart = !this.shouldShowCart
-    },
-    confirm($event) {
-      if (this.code) {
-        this.$emit('add', this.code)
-        this.code = ''
-        this.shouldShowCart = false
+  export default {
+    data() {
+      return {
+        code: '',
+        shouldShowCart: false,
       }
-      $event.preventDefault()
     },
-  },
-}
+    methods: {
+      toggleCart() {
+        this.shouldShowCart = !this.shouldShowCart
+      },
+      confirm($event) {
+        if (this.code) {
+          this.$emit('add', this.code)
+          this.code = ''
+          this.shouldShowCart = false
+        }
+        $event.preventDefault()
+      },
+    },
+  }
 </script>
 
 <style scoped src="./styles.css" />

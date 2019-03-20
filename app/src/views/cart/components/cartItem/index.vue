@@ -1,5 +1,6 @@
 <template>
   <div class="product">
+    <input type="checkbox" name="a" :id="'pro' +product.code" v-model="isChecked">
     <h3 class="code">
       <router-link :to="`/products/${product.code}`">
         商品编号: {{product.code}}
@@ -14,6 +15,16 @@
 </template>
 <script>
   export default{
+    data() {
+      return {
+        isChecked: true
+      }
+    },
+    watch: {
+      isChecked: function() {
+        this.$emit("check", this.product.code, this.isChecked)
+      }
+    },
     props: {
       product: {
         type: Object,
